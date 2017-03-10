@@ -1,0 +1,24 @@
+{
+  "name": "esun_idc_task",
+  "version": "1.0.0",
+  "description": "提供可以透過node操控google spreadsheet 的資料",
+  "main": "index.js",
+  "dependencies": {
+    "google-auth-library": "^0.10.0",
+    "googleapis": "^17.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntuaha/ESUN_IDC_TASK.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ntuaha/ESUN_IDC_TASK/issues"
+  },
+  "homepage": "https://github.com/ntuaha/ESUN_IDC_TASK#readme"
+}
