@@ -95,6 +95,7 @@ function run(scope,job){
   fs.readFile(__dirname+'/../client_secret.json', function processClientSecrets(err, content) {
     if (err) {
       console.log('Error loading client secret file: ' + err);
+      authorize(JSON.parse(process.env.GSAI), job);
       return;
     }
     // Authorize a client with the loaded credentials, then call the
