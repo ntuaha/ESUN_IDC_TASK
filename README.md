@@ -1,6 +1,6 @@
 # ESUN_IDC_TASK
 
-![img](https://funny.aha.taipei/)
+![Build Status](https://travis-ci.org/ntuaha/ESUN_IDC_TASK.png?branch=master)
 
 提供可以透過node操控google spreadsheet 的資料
 

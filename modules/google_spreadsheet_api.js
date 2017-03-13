@@ -91,21 +91,12 @@ function storeToken(token) {
 function run(scope,job){
   //var SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
   SCOPES = scope;
-  // Load client secrets from a local file.
-  try{
-    fs.readFile(__dirname+'/../client_secret.json', function processClientSecrets(err, content) {
-      if (err) {
-        console.log('Error loading client secret file: ' + err);          
-        return;
-      }
-      // Authorize a client with the loaded credentials, then call the
-      // Google Sheets API.
-      authorize(JSON.parse(content), job);
-    });
-  }catch(err){
+  try{    
+    let content = fs.readFileSync(__dirname+'/../client_secret.json','utf8');
+    authorize(JSON.parse(content), job);
+  }catch(e){
     authorize(JSON.parse(process.env.GSAI), job);
-  }
-  
+  }  
 }
 
 module.exports = {
