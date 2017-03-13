@@ -92,16 +92,20 @@ function run(scope,job){
   //var SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
   SCOPES = scope;
   // Load client secrets from a local file.
-  fs.readFile(__dirname+'/../client_secret.json', function processClientSecrets(err, content) {
-    if (err) {
-      console.log('Error loading client secret file: ' + err);
-      authorize(JSON.parse(process.env.GSAI), job);
-      return;
-    }
-    // Authorize a client with the loaded credentials, then call the
-    // Google Sheets API.
-    authorize(JSON.parse(content), job);
-  });
+  try{
+    fs.readFile(__dirname+'/../client_secret.json', function processClientSecrets(err, content) {
+      if (err) {
+        console.log('Error loading client secret file: ' + err);          
+        return;
+      }
+      // Authorize a client with the loaded credentials, then call the
+      // Google Sheets API.
+      authorize(JSON.parse(content), job);
+    });
+  }catch(err){
+    authorize(JSON.parse(process.env.GSAI), job);
+  }
+  
 }
 
 module.exports = {
