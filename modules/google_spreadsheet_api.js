@@ -95,7 +95,6 @@ function run(scope,job){
     let content = fs.readFileSync(__dirname+'/../client_secret.json','utf8');
     authorize(JSON.parse(content), job);
   }catch(e){
-    console.log(process.env.GG);
     authorize(JSON.parse(process.env.GSAI), job);
   }  
 }
